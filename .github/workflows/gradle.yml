@@ -17,10 +17,10 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Start SUT
-                - name: Container start
-                run: docker-compose up &
-                       - name: Waiting for сontainer start
-                       run: sleep 30
+                - name:Container start
+                run:docker-compose up &
+                       - name:Waiting for сontainer start
+                       run:sleep 30
         # Запускаем SUT,
         # имя файла SUT будет отличаться в каждой задаче.
         # & означает, что в фоновом режиме не блокируем терминал для запуска тестов, 
