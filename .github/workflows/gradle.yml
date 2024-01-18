@@ -16,6 +16,10 @@ jobs:
           distribution: 'adopt'
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+               - name: Container start
+               run: docker-compose up &
+                      - name: Waiting for сontainer start
+                      run: sleep 30
       - name: Start SUT
         # Запускаем SUT,
         # имя файла SUT будет отличаться в каждой задаче.
@@ -27,8 +31,3 @@ jobs:
         # Для проектов на базе Selenide необходимо добавить параметр для запуска браузера
         # в headless режиме -Dselenide.headless=true, параметр --info должен остаться
         run: ./gradlew test --info -Dselenide.headless=true
-               - name: Container start
-               run: docker-compose up &
-                      - name: Waiting for сontainer start
-                      run: sleep 30
-
