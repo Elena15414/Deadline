@@ -1,6 +1,6 @@
 name: Java CI with Gradle
 
-on: [push, pull_request]
+on: [ push, pull_request ]
 
 jobs:
   build:
@@ -26,8 +26,9 @@ jobs:
         # Запускаем автотесты
         # Для проектов на базе Selenide необходимо добавить параметр для запуска браузера
         # в headless режиме -Dselenide.headless=true, параметр --info должен остаться
-        run: ./gradlew test --info -Dselenide.headless=true  
-       - name: Container start
-        run: docker-compose up &
-       - name: Waiting for сontainer start
-        run: sleep 30
+        run: ./gradlew test --info -Dselenide.headless=true
+               - name: Container start
+               run: docker-compose up &
+                      - name: Waiting for сontainer start
+                      run: sleep 30
+
